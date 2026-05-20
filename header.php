@@ -2,7 +2,10 @@
 <header class="site-header" role="banner">
   <div class="nav-inner">
     <a class="brand" href="/index.php" aria-label="It's A Wonderful Life Weddings — Home">
-      <img src="/images/ww-icon.png" alt="" aria-hidden="true" width="78" height="38">
+      <span class="brand-monogram" aria-hidden="true">
+        <img src="/images/ww-icon.png" alt="" class="brand-monogram-light" width="78" height="38">
+        <img src="/images/ww-icon-dark.png" alt="" class="brand-monogram-dark" width="78" height="38">
+      </span>
       <span class="brand-text">
         <span>It's a Wonderful Life</span>
         <span>Weddings</span>
@@ -65,7 +68,7 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
   </button>
   <a class="brand" href="/index.php" style="color:var(--ink); margin-bottom: var(--sp-5);">
-    <img src="/images/ww-icon.png" alt="" width="78" height="38">
+    <img src="/images/ww-icon-dark.png" alt="" width="78" height="38">
     <span class="brand-text" style="color:var(--ink)">
       <span style="color:var(--plum)">It's a Wonderful Life</span>
       <span>Weddings</span>

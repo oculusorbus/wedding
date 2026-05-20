@@ -82,7 +82,7 @@ $page_schema      = [
       <!-- Officiant Elaine Hanson -->
       <article class="pastor scroll-mt" id="elainehanson" data-reveal>
         <div class="pastor-photo">
-          <?php img('images/elaine-hanson-ceremony.jpg', 'Officiant Elaine Hanson at a ceremony'); ?>
+          <?php img('images/elaine-hanson-ceremony.jpg', 'Officiant Elaine Hanson at a ceremony', ['attrs' => ['style' => 'object-position: left center;']]); ?>
         </div>
         <div>
           <span class="pastor-role">Officiant &amp; Team Member</span>

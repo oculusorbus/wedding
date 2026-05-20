@@ -158,7 +158,7 @@ $page_schema      = ["@graph" => [
           </ul>
           <p style="color: rgba(250,246,239,0.92);"><strong>and enjoy a $50.00 savings on any ceremony.</strong></p>
           <p style="margin-top: var(--sp-5);">
-            <?php img('images/flag.png', 'American flag', ['attrs' => ['style' => 'height: 110px;']]); ?>
+            <?php img('images/flag.png', 'American flag', ['attrs' => ['style' => 'height: 110px; width: auto; aspect-ratio: auto; object-fit: contain; border-radius: 0; box-shadow: none;']]); ?>
           </p>
         </div>
       </div>

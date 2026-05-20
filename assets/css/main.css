@@ -1128,10 +1128,11 @@ details.faq[open] summary::after { content: "−"; }
 .site-footer li { margin-bottom: 0.6rem; }
 .site-footer a { color: rgba(250,246,239,0.85); transition: color .2s var(--ease), padding-left .2s var(--ease); }
 .site-footer a:hover { color: var(--gold-soft); padding-left: 4px; }
+.footer-brand-col { text-align: center; }
 .footer-bride {
   width: auto;
   height: 280px;
-  margin: 0 0 var(--sp-5);
+  margin: 0 auto var(--sp-5);
   filter: drop-shadow(0 18px 40px rgba(0,0,0,0.4));
 }
 @media (max-width: 820px) {
@@ -1142,6 +1143,8 @@ details.faq[open] summary::after { content: "−"; }
   line-height: 1.55;
   color: rgba(250,246,239,0.72);
   max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .phone-block {
   display: flex; flex-direction: column; gap: 0.85rem;

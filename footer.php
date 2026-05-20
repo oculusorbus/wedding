@@ -1,7 +1,7 @@
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-      <div data-reveal>
+      <div class="footer-brand-col" data-reveal>
         <picture>
           <source type="image/webp" srcset="/images/bride-logo.webp">
           <img class="footer-bride" src="/images/bride-logo.png" alt="It's a Wonderful Life Weddings" width="277" height="567" loading="lazy" decoding="async">

@@ -1128,7 +1128,10 @@ details.faq[open] summary::after { content: "−"; }
 /* Positions tuned to the painted hearts in service-area-map.png */
 .service-pin--kc { left: 48.2%; top: 23.2%; }
 .service-pin--ky { left: 82.9%; top: 28.3%; }
-.service-pin--tx { left: 32.1%; top: 68.7%; width: 18%; }
+/* TX heart is one painted graphic, so split it into two stacked click zones:
+   top half links to Austin, bottom half to San Antonio. */
+.service-pin--austin { left: 32.1%; top: 64.2%; width: 12%; }
+.service-pin--sa     { left: 32.1%; top: 73.2%; width: 12%; }
 
 .service-map-caption {
   margin: var(--sp-4) auto 0;

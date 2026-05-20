@@ -295,8 +295,11 @@ $page_schema      = [
             <a class="service-pin service-pin--ky" href="/kentucky.php" aria-label="Central Kentucky weddings">
               <span class="service-pin-tip">Central Kentucky</span>
             </a>
-            <a class="service-pin service-pin--tx" href="/sanantonio.php" aria-label="San Antonio and Austin weddings">
-              <span class="service-pin-tip">San Antonio &amp; Austin</span>
+            <a class="service-pin service-pin--austin" href="/austin.php" aria-label="Austin weddings">
+              <span class="service-pin-tip">Austin</span>
+            </a>
+            <a class="service-pin service-pin--sa" href="/sanantonio.php" aria-label="San Antonio weddings">
+              <span class="service-pin-tip">San Antonio</span>
             </a>
           </div>
         </div>

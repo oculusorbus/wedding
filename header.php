@@ -116,5 +116,5 @@
     </li>
     <li class="mobile-nav-group"><a href="/contact.php">Contact Us</a></li>
   </ul>
-  <a class="btn btn--gold mobile-nav-cta" href="/contact.php">Book Your Date</a>
+  <a class="btn btn--gold mobile-nav-cta" href="tel:2107125458">Call Us · 210-712-5458</a>
 </aside>

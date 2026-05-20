@@ -592,6 +592,10 @@ blockquote {
   place-items: center;
   text-align: center;
   color: var(--cream);
+  /* Solid dark background-color so static contrast analyzers (WAVE etc.)
+     can evaluate the cream/gold text against a real dark surface. The
+     full-bleed photo and gradient overlay sit on top. */
+  background-color: var(--ink);
   isolation: isolate;
   padding: var(--nav-h) var(--sp-5) var(--sp-6);
   overflow: hidden;
@@ -686,6 +690,8 @@ blockquote {
   padding: calc(var(--nav-h) + var(--sp-7)) var(--sp-5) var(--sp-7);
   text-align: center;
   color: var(--cream);
+  /* Same WAVE-friendly dark fallback as the homepage hero. */
+  background-color: var(--ink);
   isolation: isolate;
   overflow: hidden;
 }
@@ -1020,79 +1026,106 @@ details.faq[open] summary::after { content: "−"; }
 
 /* ---------- Service area map (homepage) ---------- */
 .service-map {
-  max-width: 720px;
+  max-width: 560px;
   margin: 0 auto var(--sp-7);
   padding: 0;
   text-align: center;
 }
-.service-map-svg {
+.service-map-frame {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 540px;
+  border-radius: var(--r-lg);
+  background: radial-gradient(circle at 50% 45%, rgba(250, 246, 239, 0.96) 0%, rgba(241, 234, 217, 0.92) 70%, rgba(232, 222, 199, 0.85) 100%);
+  padding: var(--sp-5) var(--sp-4);
+  box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(214, 184, 122, 0.35);
+}
+.service-map-frame > picture,
+.service-map-frame > picture img,
+.service-map-frame > img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  filter: drop-shadow(0 24px 60px rgba(0,0,0,0.35));
 }
-.service-map .map-state {
-  fill: rgba(250, 246, 239, 0.08);
-  stroke: rgba(214, 184, 122, 0.55);
-  stroke-width: 1.2;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  transition: fill .35s var(--ease), stroke .35s var(--ease);
+.service-pin {
+  position: absolute;
+  width: 14%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
 }
-.service-map .map-labels text {
-  font-family: var(--f-body);
-  font-size: 11px;
+.service-pin::before {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 149, 74, 0.55) 0%, rgba(184, 149, 74, 0) 70%);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.service-pin::after {
+  content: "";
+  position: absolute;
+  inset: 25%;
+  border-radius: 50%;
+  border: 2px solid var(--gold-dark);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.service-pin:hover::before,
+.service-pin:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.service-pin:hover::after,
+.service-pin:focus-visible::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.service-pin-tip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -8px);
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--r-pill);
+  font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
-  fill: rgba(214, 184, 122, 0.85);
-  text-anchor: middle;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  pointer-events: none;
-}
-.service-map .map-marker { cursor: pointer; outline: none; }
-.service-map .map-marker use {
-  fill: var(--gold-soft);
-  stroke: rgba(26, 15, 36, 0.35);
-  stroke-width: 0.6;
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: fill .25s var(--ease), transform .35s var(--ease), filter .35s var(--ease);
-  filter: drop-shadow(0 4px 10px rgba(184, 149, 74, 0.45));
-}
-.service-map .map-marker:hover use,
-.service-map .map-marker:focus-visible use {
-  fill: #fff;
-  transform: scale(1.18);
-  filter: drop-shadow(0 6px 18px rgba(255, 255, 255, 0.55));
-}
-.service-map .map-markers:hover .map-marker:not(:hover):not(:focus-visible) use {
-  fill: rgba(214, 184, 122, 0.45);
-  filter: none;
-}
-/* Tooltip pill */
-.service-map .map-tip {
+  white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .22s var(--ease);
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
-.service-map .map-tip rect {
-  fill: var(--cream);
-  stroke: var(--gold-soft);
-  stroke-width: 0.6;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+.service-pin-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--ink);
 }
-.service-map .map-tip text {
-  font-family: var(--f-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  fill: var(--ink);
-  text-anchor: middle;
-}
-.service-map .map-marker:hover .map-tip,
-.service-map .map-marker:focus-visible .map-tip {
+.service-pin:hover .service-pin-tip,
+.service-pin:focus-visible .service-pin-tip {
   opacity: 1;
+  transform: translate(-50%, -12px);
 }
+/* Positions tuned to the painted hearts in service-area-map.png */
+.service-pin--kc { left: 46.5%; top: 22%;   }
+.service-pin--ky { left: 75%;   top: 25.5%; }
+.service-pin--tx { left: 35%;   top: 63%; width: 22%; }
+
 .service-map-caption {
   margin: var(--sp-4) auto 0;
   font-size: 0.78rem;
@@ -1102,7 +1135,7 @@ details.faq[open] summary::after { content: "−"; }
 }
 @media (max-width: 540px) {
   .service-map { max-width: 100%; }
-  .service-map .map-labels text { font-size: 14px; }
+  .service-pin-tip { font-size: 0.68rem; padding: 0.35rem 0.7rem; }
 }
 
 /* ---------- Locations strip ---------- */

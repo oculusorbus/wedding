@@ -163,7 +163,7 @@ $page_schema      = [
     <div class="container">
       <div class="feature-row" data-reveal>
         <div class="testimonial-photo">
-          <?php img('images/bride-groom-lake-background.jpg', 'Bride and groom embracing by a lake', ['sizes' => '(min-width: 900px) 540px, 100vw']); ?>
+          <?php img('images/bride-groom-lake-background.jpg', 'Bride and groom embracing by a lake', ['sizes' => '(min-width: 900px) 540px, 100vw', 'attrs' => ['style' => 'object-position: left center;']]); ?>
         </div>
         <div>
           <span class="eyebrow eyebrow--left">Don't Just Take Our Word For It</span>

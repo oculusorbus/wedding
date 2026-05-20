@@ -299,36 +299,46 @@ $page_schema      = [
           </defs>
 
           <g class="map-states">
-            <path class="map-state" d="M 150,90 L 290,90 L 290,170 L 150,170 Z"/>
-            <path class="map-state" d="M 290,90 L 365,93 L 380,105 L 392,135 L 400,165 L 388,182 L 365,188 L 358,205 L 348,228 L 320,232 L 310,210 L 295,195 L 290,178 Z"/>
-            <path class="map-state" d="M 85,170 L 150,170 L 150,200 L 200,202 L 250,205 L 290,208 L 295,235 L 240,242 L 175,242 L 110,242 L 95,242 L 95,200 L 85,200 Z"/>
-            <path class="map-state" d="M 295,212 L 348,212 L 395,215 L 398,242 L 395,275 L 348,278 L 305,278 Z"/>
-            <path class="map-state" d="M 50,205 L 95,205 L 95,242 L 175,245 L 235,247 L 280,250 L 295,275 L 305,295 L 320,310 L 320,325 L 305,335 L 295,345 L 280,350 L 265,358 L 250,365 L 235,375 L 220,388 L 205,400 L 188,410 L 168,415 L 150,408 L 135,395 L 120,378 L 105,360 L 88,338 L 72,315 L 58,290 L 48,265 L 42,240 L 45,218 Z"/>
-            <path class="map-state" d="M 305,278 L 348,278 L 395,278 L 398,310 L 395,340 L 380,355 L 360,360 L 340,358 L 320,350 L 305,340 L 295,320 L 295,295 Z"/>
-            <path class="map-state" d="M 398,235 L 422,235 L 425,278 L 428,320 L 430,355 L 412,360 L 398,355 L 398,310 L 398,278 Z"/>
-            <path class="map-state" d="M 425,235 L 460,235 L 462,278 L 465,320 L 468,365 L 448,370 L 432,365 L 428,320 L 425,278 Z"/>
-            <path class="map-state" d="M 405,135 L 425,135 L 460,142 L 500,148 L 540,155 L 550,168 L 540,182 L 520,180 L 505,175 L 485,180 L 465,178 L 445,183 L 425,180 L 410,175 L 402,160 Z"/>
-            <path class="map-state" d="M 410,200 L 450,202 L 490,205 L 520,210 L 530,220 L 522,232 L 480,232 L 440,232 L 408,228 L 403,215 Z"/>
+            <!-- KS -->
+            <path class="map-state" d="M 170,90 L 290,90 L 290,170 L 170,170 Z"/>
+            <!-- MO with bootheel -->
+            <path class="map-state" d="M 290,90 L 385,93 L 390,135 L 398,165 L 392,195 L 382,215 L 360,220 L 348,225 L 335,222 L 322,205 L 305,200 L 295,190 L 290,170 Z"/>
+            <!-- OK panhandle + body (single L-shape) -->
+            <path class="map-state" d="M 80,170 L 290,170 L 290,240 L 170,240 L 170,200 L 80,200 Z"/>
+            <!-- AR -->
+            <path class="map-state" d="M 290,240 L 348,240 L 350,275 L 305,285 L 295,265 Z"/>
+            <!-- KY -->
+            <path class="map-state" d="M 398,170 L 410,150 L 440,145 L 475,148 L 510,152 L 540,162 L 545,178 L 538,200 L 515,215 L 490,220 L 460,222 L 430,222 L 410,215 L 400,200 Z"/>
+            <!-- TN -->
+            <path class="map-state" d="M 335,222 L 348,222 L 410,222 L 460,222 L 490,222 L 515,222 L 535,225 L 535,240 L 500,242 L 460,242 L 410,242 L 360,240 L 340,235 Z"/>
+            <!-- LA -->
+            <path class="map-state" d="M 305,285 L 350,283 L 395,285 L 398,320 L 392,345 L 370,355 L 348,358 L 322,355 L 305,340 L 295,320 L 290,305 Z"/>
+            <!-- MS -->
+            <path class="map-state" d="M 395,242 L 425,242 L 428,290 L 432,330 L 432,355 L 415,360 L 398,355 L 395,320 L 392,285 Z"/>
+            <!-- AL -->
+            <path class="map-state" d="M 425,242 L 460,242 L 465,290 L 470,330 L 472,360 L 452,365 L 432,360 L 432,330 L 428,290 Z"/>
+            <!-- TX (panhandle + body, single path) -->
+            <path class="map-state" d="M 90,200 L 175,200 L 175,240 L 290,240 L 295,265 L 305,285 L 320,305 L 322,325 L 305,340 L 290,355 L 270,375 L 245,395 L 215,410 L 180,418 L 150,410 L 125,392 L 100,370 L 78,345 L 58,315 L 45,285 L 42,255 L 48,228 L 65,210 Z"/>
           </g>
 
           <g class="map-labels" aria-hidden="true">
-            <text x="220" y="138">KS</text>
-            <text x="340" y="148">MO</text>
-            <text x="190" y="226">OK</text>
-            <text x="348" y="252">AR</text>
-            <text x="128" y="295">TX</text>
-            <text x="350" y="318">LA</text>
+            <text x="230" y="135">KS</text>
+            <text x="340" y="150">MO</text>
+            <text x="225" y="220">OK</text>
+            <text x="322" y="262">AR</text>
+            <text x="160" y="330">TX</text>
+            <text x="350" y="320">LA</text>
             <text x="412" y="305">MS</text>
-            <text x="444" y="305">AL</text>
-            <text x="465" y="222">TN</text>
-            <text x="430" y="167">KY</text>
+            <text x="448" y="305">AL</text>
+            <text x="470" y="237">TN</text>
+            <text x="475" y="180">KY</text>
           </g>
 
           <g class="map-markers">
             <a href="/kansascity.php" class="map-marker" aria-label="Kansas City weddings">
               <title>Kansas City</title>
-              <use href="#map-heart" x="277" y="119" width="26" height="26"/>
-              <g class="map-tip" transform="translate(290 132)">
+              <use href="#map-heart" x="278" y="117" width="26" height="26"/>
+              <g class="map-tip" transform="translate(291 130)">
                 <rect x="-55" y="-44" width="110" height="22" rx="11"/>
                 <text x="0" y="-29">Kansas City</text>
               </g>
@@ -336,8 +346,8 @@ $page_schema      = [
 
             <a href="/kentucky.php" class="map-marker" aria-label="Central Kentucky weddings">
               <title>Central Kentucky</title>
-              <use href="#map-heart" x="482" y="157" width="26" height="26"/>
-              <g class="map-tip" transform="translate(495 170)">
+              <use href="#map-heart" x="490" y="162" width="26" height="26"/>
+              <g class="map-tip" transform="translate(503 175)">
                 <rect x="-70" y="-44" width="140" height="22" rx="11"/>
                 <text x="0" y="-29">Central Kentucky</text>
               </g>
@@ -345,8 +355,8 @@ $page_schema      = [
 
             <a href="/austin.php" class="map-marker" aria-label="Austin weddings">
               <title>Austin</title>
-              <use href="#map-heart" x="201" y="297" width="22" height="22"/>
-              <g class="map-tip" transform="translate(212 308)">
+              <use href="#map-heart" x="194" y="284" width="22" height="22"/>
+              <g class="map-tip" transform="translate(205 295)">
                 <rect x="-38" y="-40" width="76" height="22" rx="11"/>
                 <text x="0" y="-25">Austin</text>
               </g>
@@ -354,8 +364,8 @@ $page_schema      = [
 
             <a href="/sanantonio.php" class="map-marker" aria-label="San Antonio weddings">
               <title>San Antonio</title>
-              <use href="#map-heart" x="157" y="339" width="22" height="22"/>
-              <g class="map-tip" transform="translate(168 350)">
+              <use href="#map-heart" x="155" y="335" width="22" height="22"/>
+              <g class="map-tip" transform="translate(166 346)">
                 <rect x="-55" y="38" width="110" height="22" rx="11"/>
                 <text x="0" y="53">San Antonio</text>
               </g>

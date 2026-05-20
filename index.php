@@ -287,16 +287,18 @@ $page_schema      = [
 
       <figure class="service-map" data-reveal data-reveal-delay="1">
         <div class="service-map-frame">
-          <?php img('images/service-area-map.png', 'Stylized map of our service area covering Texas, Kansas City, and Central Kentucky', ['sizes' => '(min-width: 720px) 540px, 90vw']); ?>
-          <a class="service-pin service-pin--kc" href="/kansascity.php" aria-label="Kansas City weddings">
-            <span class="service-pin-tip">Kansas City</span>
-          </a>
-          <a class="service-pin service-pin--ky" href="/kentucky.php" aria-label="Central Kentucky weddings">
-            <span class="service-pin-tip">Central Kentucky</span>
-          </a>
-          <a class="service-pin service-pin--tx" href="/sanantonio.php" aria-label="San Antonio and Austin weddings">
-            <span class="service-pin-tip">San Antonio &amp; Austin</span>
-          </a>
+          <div class="service-map-inner">
+            <?php img('images/service-area-map.png', 'Stylized map of our service area covering Texas, Kansas City, and Central Kentucky', ['sizes' => '(min-width: 720px) 480px, 80vw']); ?>
+            <a class="service-pin service-pin--kc" href="/kansascity.php" aria-label="Kansas City weddings">
+              <span class="service-pin-tip">Kansas City</span>
+            </a>
+            <a class="service-pin service-pin--ky" href="/kentucky.php" aria-label="Central Kentucky weddings">
+              <span class="service-pin-tip">Central Kentucky</span>
+            </a>
+            <a class="service-pin service-pin--tx" href="/sanantonio.php" aria-label="San Antonio and Austin weddings">
+              <span class="service-pin-tip">San Antonio &amp; Austin</span>
+            </a>
+          </div>
         </div>
         <figcaption class="service-map-caption">Tap a heart to learn more about that location.</figcaption>
       </figure>

@@ -8,8 +8,8 @@
         </picture>
       </div>
 
-      <div data-reveal data-reveal-delay="1">
-        <h5>Quick Links</h5>
+      <nav data-reveal data-reveal-delay="1" aria-labelledby="footer-quicklinks">
+        <h2 id="footer-quicklinks" class="footer-h">Quick Links</h2>
         <ul>
           <li><a href="/pricing.php#weddings">Services</a></li>
           <li><a href="/pricing.php">Pricing</a></li>
@@ -19,20 +19,20 @@
           <li><a href="/videos.php">Videos</a></li>
           <li><a href="/contact.php">Contact Us</a></li>
         </ul>
-      </div>
+      </nav>
 
-      <div data-reveal data-reveal-delay="2">
-        <h5>Connect</h5>
+      <nav data-reveal data-reveal-delay="2" aria-labelledby="footer-connect">
+        <h2 id="footer-connect" class="footer-h">Connect</h2>
         <ul>
           <li><a href="https://www.facebook.com/WeddingsSA" target="_blank" rel="noopener">San Antonio / Austin Facebook</a></li>
           <li><a href="https://www.facebook.com/WeddingsKC" target="_blank" rel="noopener">Kansas City Facebook</a></li>
           <li><a href="https://www.theknot.com/marketplace/its-a-wonderful-life-weddings-sa-san-antonio-tx-770900" target="_blank" rel="noopener">The Knot.com</a></li>
           <li><a href="mailto:pastordavidbarger@gmail.com">pastordavidbarger@gmail.com</a></li>
         </ul>
-      </div>
+      </nav>
 
-      <div data-reveal data-reveal-delay="3">
-        <h5>By Phone</h5>
+      <section data-reveal data-reveal-delay="3" aria-labelledby="footer-phone">
+        <h2 id="footer-phone" class="footer-h">By Phone</h2>
         <div class="phone-block">
           <div>
             <div class="label">Texas Weddings</div>
@@ -47,7 +47,7 @@
             <a href="tel:3162104760">316-210-4760</a>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 
     <div class="footer-blurb" data-reveal>

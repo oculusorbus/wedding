@@ -12,28 +12,36 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // 2) Desktop dropdowns (click + hover)
-  document.querySelectorAll('.nav-links > li.has-submenu').forEach((li) => {
-    const trigger = li.querySelector('.nav-toggle');
+  // 2) Desktop dropdowns (click + hover; hover state is CSS-only, JS handles click + a11y)
+  const navItems = document.querySelectorAll('.nav-links > li.has-submenu');
+  const setExpanded = (li, open) => {
+    li.classList.toggle('is-open', open);
+    const trigger = li.querySelector(':scope > .nav-toggle');
+    if (trigger) trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  navItems.forEach((li) => {
+    const trigger = li.querySelector(':scope > .nav-toggle');
     if (!trigger) return;
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
-      const open = li.classList.toggle('is-open');
-      // close siblings
-      li.parentElement.querySelectorAll(':scope > li.has-submenu').forEach((other) => {
-        if (other !== li) other.classList.remove('is-open');
-      });
-      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      const willOpen = !li.classList.contains('is-open');
+      navItems.forEach((other) => { if (other !== li) setExpanded(other, false); });
+      setExpanded(li, willOpen);
+    });
+    // Keep aria in sync with hover: open on mouseenter, close on mouseleave
+    li.addEventListener('mouseenter', () => trigger.setAttribute('aria-expanded', 'true'));
+    li.addEventListener('mouseleave', () => {
+      if (!li.classList.contains('is-open')) trigger.setAttribute('aria-expanded', 'false');
     });
   });
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-links')) {
-      document.querySelectorAll('.nav-links > li.is-open').forEach((li) => li.classList.remove('is-open'));
+      navItems.forEach((li) => setExpanded(li, false));
     }
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      document.querySelectorAll('.nav-links > li.is-open').forEach((li) => li.classList.remove('is-open'));
+      navItems.forEach((li) => setExpanded(li, false));
       closeMobile();
     }
   });
@@ -42,12 +50,31 @@
   const burger = document.querySelector('.nav-burger');
   const mobile = document.querySelector('.mobile-nav');
   const closeBtn = document.querySelector('.mobile-nav-close');
-  const openMobile = () => { if (mobile) { mobile.classList.add('is-open'); document.body.style.overflow = 'hidden'; } };
-  const closeMobile = () => { if (mobile) { mobile.classList.remove('is-open'); document.body.style.overflow = ''; } };
+  const openMobile = () => {
+    if (!mobile) return;
+    mobile.classList.add('is-open');
+    mobile.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (burger) burger.setAttribute('aria-expanded', 'true');
+    if (closeBtn) closeBtn.focus();
+  };
+  const closeMobile = () => {
+    if (!mobile) return;
+    mobile.classList.remove('is-open');
+    mobile.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (burger) {
+      burger.setAttribute('aria-expanded', 'false');
+      burger.focus();
+    }
+  };
   if (burger) burger.addEventListener('click', openMobile);
   if (closeBtn) closeBtn.addEventListener('click', closeMobile);
   document.querySelectorAll('.mobile-nav-group > button').forEach((btn) => {
-    btn.addEventListener('click', () => btn.parentElement.classList.toggle('is-open'));
+    btn.addEventListener('click', () => {
+      const open = btn.parentElement.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
   });
   document.querySelectorAll('.mobile-nav a').forEach((a) => a.addEventListener('click', closeMobile));
 

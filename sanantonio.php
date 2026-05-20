@@ -26,7 +26,7 @@ $page_schema      = [
 <body>
 <?php include __DIR__ . '/header.php'; ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <section class="subhero">
     <div class="subhero-bg">
@@ -132,9 +132,9 @@ $page_schema      = [
             <a href="mailto:pastorjosecruz01@yahoo.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/></svg> Email Pastor José Cruz</a>
           </div>
 
-          <details class="faq" style="margin-top: var(--sp-5);">
-            <summary>Biografía En Español</summary>
-            <div class="faq-body">
+          <details class="faq" style="margin-top: var(--sp-5);" lang="es">
+            <summary lang="es">Biografía En Español</summary>
+            <div class="faq-body" lang="es">
               <p>El Pastor José Cruz ha residido en el área de San Antonio por más de 25 años. Su pasión por los matrimonios duraderos y el honor de ver a dos personas unirse como una sola, es una de sus mayores alegrías. A lo largo de los años, ha tenido el placer de oficiar numerosas ceremonias de matrimonio en los idiomas de inglés y español, y en algunos casos en ambos idiomas para satisfacer las necesidades de los novios y sus seres queridos.</p>
               <p>Él es graduado de la Universidad Bautista Wayland y obtuvo los siguientes títulos universitarios:</p>
               <ul>

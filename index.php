@@ -22,7 +22,7 @@ $page_schema      = [
 
 <?php include __DIR__ . '/header.php'; ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <!-- HERO -->
   <section class="hero">
@@ -203,7 +203,7 @@ $page_schema      = [
           as you like it.
         </p>
         <div class="trust-strip" data-reveal data-reveal-delay="1">
-          <?php img('images/iapwo.png', 'International Association of Professional Wedding Officiants logo', ['attrs' => ['style' => 'height: 130px; background: rgba(255,255,255,0.06); padding: 16px; border-radius: 14px;']]); ?>
+          <?php img('images/iapwo.png', 'International Association of Professional Wedding Officiants logo', ['attrs' => ['style' => 'height: 220px; background: rgba(255,255,255,0.06); padding: 20px; border-radius: 18px;']]); ?>
         </div>
       </div>
     </div>
@@ -285,7 +285,87 @@ $page_schema      = [
         <p class="lede" style="color: rgba(250,246,239,0.85);"><strong>Whether it is in San Antonio, Austin, the Hill Country, Kansas City, or Central Kentucky, we are ready to help you make your dreams come true. We are dedicated to making this part of your life, "A Wonderful Life."</strong></p>
       </div>
 
-      <div class="locations" data-reveal>
+      <figure class="service-map" data-reveal data-reveal-delay="1">
+        <svg class="service-map-svg" viewBox="0 0 600 460" role="img"
+             aria-labelledby="service-map-title service-map-desc"
+             xmlns="http://www.w3.org/2000/svg">
+          <title id="service-map-title">Our service area</title>
+          <desc id="service-map-desc">A stylized map of the south-central United States showing four wedding officiant service areas: Austin and San Antonio in Texas, Kansas City on the Kansas–Missouri border, and Central Kentucky.</desc>
+
+          <defs>
+            <symbol id="map-heart" viewBox="-12 -12 24 24" overflow="visible">
+              <path d="M 0,8.5 C -5.6,3.4 -12,-1 -12,-6 C -12,-10 -8.4,-12 -4.6,-11 C -2.2,-10.2 -0.4,-8 0,-4.6 C 0.4,-8 2.2,-10.2 4.6,-11 C 8.4,-12 12,-10 12,-6 C 12,-1 5.6,3.4 0,8.5 Z"/>
+            </symbol>
+          </defs>
+
+          <g class="map-states">
+            <path class="map-state" d="M 150,90 L 290,90 L 290,170 L 150,170 Z"/>
+            <path class="map-state" d="M 290,90 L 365,93 L 380,105 L 392,135 L 400,165 L 388,182 L 365,188 L 358,205 L 348,228 L 320,232 L 310,210 L 295,195 L 290,178 Z"/>
+            <path class="map-state" d="M 85,170 L 150,170 L 150,200 L 200,202 L 250,205 L 290,208 L 295,235 L 240,242 L 175,242 L 110,242 L 95,242 L 95,200 L 85,200 Z"/>
+            <path class="map-state" d="M 295,212 L 348,212 L 395,215 L 398,242 L 395,275 L 348,278 L 305,278 Z"/>
+            <path class="map-state" d="M 50,205 L 95,205 L 95,242 L 175,245 L 235,247 L 280,250 L 295,275 L 305,295 L 320,310 L 320,325 L 305,335 L 295,345 L 280,350 L 265,358 L 250,365 L 235,375 L 220,388 L 205,400 L 188,410 L 168,415 L 150,408 L 135,395 L 120,378 L 105,360 L 88,338 L 72,315 L 58,290 L 48,265 L 42,240 L 45,218 Z"/>
+            <path class="map-state" d="M 305,278 L 348,278 L 395,278 L 398,310 L 395,340 L 380,355 L 360,360 L 340,358 L 320,350 L 305,340 L 295,320 L 295,295 Z"/>
+            <path class="map-state" d="M 398,235 L 422,235 L 425,278 L 428,320 L 430,355 L 412,360 L 398,355 L 398,310 L 398,278 Z"/>
+            <path class="map-state" d="M 425,235 L 460,235 L 462,278 L 465,320 L 468,365 L 448,370 L 432,365 L 428,320 L 425,278 Z"/>
+            <path class="map-state" d="M 405,135 L 425,135 L 460,142 L 500,148 L 540,155 L 550,168 L 540,182 L 520,180 L 505,175 L 485,180 L 465,178 L 445,183 L 425,180 L 410,175 L 402,160 Z"/>
+            <path class="map-state" d="M 410,200 L 450,202 L 490,205 L 520,210 L 530,220 L 522,232 L 480,232 L 440,232 L 408,228 L 403,215 Z"/>
+          </g>
+
+          <g class="map-labels" aria-hidden="true">
+            <text x="220" y="138">KS</text>
+            <text x="340" y="148">MO</text>
+            <text x="190" y="226">OK</text>
+            <text x="348" y="252">AR</text>
+            <text x="128" y="295">TX</text>
+            <text x="350" y="318">LA</text>
+            <text x="412" y="305">MS</text>
+            <text x="444" y="305">AL</text>
+            <text x="465" y="222">TN</text>
+            <text x="430" y="167">KY</text>
+          </g>
+
+          <g class="map-markers">
+            <a href="/kansascity.php" class="map-marker" aria-label="Kansas City weddings">
+              <title>Kansas City</title>
+              <use href="#map-heart" x="277" y="119" width="26" height="26"/>
+              <g class="map-tip" transform="translate(290 132)">
+                <rect x="-55" y="-44" width="110" height="22" rx="11"/>
+                <text x="0" y="-29">Kansas City</text>
+              </g>
+            </a>
+
+            <a href="/kentucky.php" class="map-marker" aria-label="Central Kentucky weddings">
+              <title>Central Kentucky</title>
+              <use href="#map-heart" x="482" y="157" width="26" height="26"/>
+              <g class="map-tip" transform="translate(495 170)">
+                <rect x="-70" y="-44" width="140" height="22" rx="11"/>
+                <text x="0" y="-29">Central Kentucky</text>
+              </g>
+            </a>
+
+            <a href="/austin.php" class="map-marker" aria-label="Austin weddings">
+              <title>Austin</title>
+              <use href="#map-heart" x="201" y="297" width="22" height="22"/>
+              <g class="map-tip" transform="translate(212 308)">
+                <rect x="-38" y="-40" width="76" height="22" rx="11"/>
+                <text x="0" y="-25">Austin</text>
+              </g>
+            </a>
+
+            <a href="/sanantonio.php" class="map-marker" aria-label="San Antonio weddings">
+              <title>San Antonio</title>
+              <use href="#map-heart" x="157" y="339" width="22" height="22"/>
+              <g class="map-tip" transform="translate(168 350)">
+                <rect x="-55" y="38" width="110" height="22" rx="11"/>
+                <text x="0" y="53">San Antonio</text>
+              </g>
+            </a>
+          </g>
+        </svg>
+        <figcaption class="service-map-caption">Tap a heart to explore that location.</figcaption>
+      </figure>
+
+      <div class="locations" data-reveal data-reveal-delay="2">
         <a href="/sanantonio.php" class="loc">
           <?php img('images/san-antonio.jpg', 'San Antonio weddings', ['sizes' => '(min-width: 980px) 25vw, 100vw']); ?>
           <div class="loc-label">

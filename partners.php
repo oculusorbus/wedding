@@ -14,7 +14,7 @@ $page_image       = "/images/san-antonio.jpg";
 <body>
 <?php include __DIR__ . '/header.php'; ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <section class="subhero">
     <div class="subhero-bg">

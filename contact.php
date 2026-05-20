@@ -143,7 +143,7 @@ $page_schema      = [
 <body>
 <?php include __DIR__ . '/header.php'; ?>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <section class="subhero">
     <div class="subhero-bg">
@@ -160,14 +160,14 @@ $page_schema      = [
     <div class="container-tight">
 
       <?php if ($form_state === 'success'): ?>
-        <div class="form-card text-center" data-reveal>
-          <h1 class="header">Success!</h1>
+        <div class="form-card text-center" data-reveal role="status" aria-live="polite">
+          <h2 class="header">Success!</h2>
           <p class="lede"><strong>Thank you for contacting us. We will be in touch with you very soon.</strong></p>
           <p style="margin-top: var(--sp-5);"><a class="btn btn--ghost" href="/index.php">Return Home</a></p>
         </div>
       <?php elseif ($form_state === 'error'): ?>
-        <div class="form-card" data-reveal>
-          <h1 class="header">Oops!</h1>
+        <div class="form-card" data-reveal role="alert" aria-live="assertive">
+          <h2 class="header">Oops!</h2>
           <p>We are very sorry, but there were error(s) found with the form you submitted.</p>
           <p>These error(s) appear below:</p>
           <p><i><?= $form_error_msg /* preserved literal HTML from legacy validation messages */ ?></i></p>
@@ -187,35 +187,37 @@ $page_schema      = [
         </div>
 
         <div class="form-card" data-reveal data-reveal-delay="1" style="margin-top: var(--sp-6);">
-          <form name="contactform" method="post" action="/contact.php" novalidate>
+          <form name="contactform" method="post" action="/contact.php" novalidate aria-labelledby="contact-form-heading">
+            <h2 id="contact-form-heading" class="visually-hidden">Contact form</h2>
+            <p id="required-note" class="text-muted" style="font-size: 0.85rem; margin-bottom: var(--sp-4);"><span aria-hidden="true">*</span> indicates a required field.</p>
             <div class="grid grid-2">
               <div class="field">
-                <label for="first_name">First Name <span aria-hidden="true">*</span></label>
-                <input id="first_name" name="first_name" type="text" required>
+                <label for="first_name">First Name <span aria-hidden="true">*</span><span class="visually-hidden"> required</span></label>
+                <input id="first_name" name="first_name" type="text" required aria-required="true" autocomplete="given-name">
               </div>
               <div class="field">
-                <label for="last_name">Last Name <span aria-hidden="true">*</span></label>
-                <input id="last_name" name="last_name" type="text" required>
+                <label for="last_name">Last Name <span aria-hidden="true">*</span><span class="visually-hidden"> required</span></label>
+                <input id="last_name" name="last_name" type="text" required aria-required="true" autocomplete="family-name">
               </div>
             </div>
             <div class="field">
-              <label for="email">Email <span aria-hidden="true">*</span></label>
-              <input id="email" name="email" type="email" required>
+              <label for="email">Email <span aria-hidden="true">*</span><span class="visually-hidden"> required</span></label>
+              <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" inputmode="email">
             </div>
             <div class="field">
               <label for="telephone">Phone</label>
-              <input id="telephone" name="telephone" type="tel">
+              <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel">
             </div>
             <div class="field">
-              <label for="comments">Comments <span aria-hidden="true">*</span></label>
-              <textarea id="comments" name="comments" rows="5" required></textarea>
+              <label for="comments">Comments <span aria-hidden="true">*</span><span class="visually-hidden"> required</span></label>
+              <textarea id="comments" name="comments" rows="5" required aria-required="true"></textarea>
             </div>
-            <div class="field">
+            <div class="field" role="group" aria-label="Spam protection">
               <div class="g-recaptcha" data-sitekey="6Ld414gUAAAAAFq0gh7PDnX7ZlPuO-M4WNAWJDJJ"></div>
             </div>
             <button class="btn btn--gold" type="submit" name="action">
               Send Message
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </form>
         </div>

@@ -11,8 +11,9 @@
   --cream:      #faf6ef;
   --cream-2:    #f1ead9;
   --cream-3:    #e8dec7;
-  --gold:       #b8954a;
-  --gold-soft:  #d6b87a;
+  --gold:       #b8954a;       /* decorative + on dark backgrounds */
+  --gold-dark:  #7a5e25;       /* AA-compliant text gold for light backgrounds (≥4.5:1 on cream) */
+  --gold-soft:  #d6b87a;       /* on dark backgrounds */
   --gold-tint:  #ede0c2;
   --blush:      #e8c4c0;
   --rose:       #c97b6e;
@@ -67,6 +68,38 @@
   --ease: cubic-bezier(.2, .8, .2, 1);
 }
 
+/* ---------- Skip link (visible on focus) ---------- */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: var(--sp-4);
+  z-index: 1000;
+  padding: 0.85rem 1.4rem;
+  background: var(--plum);
+  color: var(--cream);
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: top .2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.skip-link:focus { top: var(--sp-3); color: var(--cream); }
+
+/* Main landmark — receives focus from the skip link without showing a ring on visual click */
+#main:focus { outline: none; }
+
+/* Visually hidden but available to assistive tech */
+.visually-hidden,
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap; border: 0;
+}
+
 /* ---------- Base reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -110,21 +143,30 @@ blockquote {
   position: relative;
   margin: var(--sp-5) 0;
   padding: var(--sp-4) var(--sp-5);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--gold-dark);
   font-family: var(--f-display);
   font-style: italic;
   font-size: var(--fs-lg);
   color: var(--text-soft);
   line-height: 1.55;
-  background: rgba(184, 149, 74, 0.05);
+  background: rgba(122, 94, 37, 0.06);
   border-radius: 0 var(--r-sm) var(--r-sm) 0;
 }
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 3px solid var(--plum);
   outline-offset: 3px;
   border-radius: 4px;
+  box-shadow: 0 0 0 5px rgba(250, 246, 239, 0.85);
 }
-::selection { background: var(--gold); color: var(--ink); }
+/* On dark surfaces use a cream outline for contrast */
+.site-header :focus-visible,
+.hero :focus-visible, .subhero :focus-visible,
+.section--plum :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--cream);
+  box-shadow: 0 0 0 5px rgba(26, 15, 36, 0.6);
+}
+::selection { background: var(--gold-dark); color: var(--cream); }
 
 /* ---------- Layout helpers ---------- */
 .container       { width: 100%; max-width: var(--container);        margin: 0 auto; padding: 0 var(--sp-5); }
@@ -151,10 +193,10 @@ blockquote {
   display: inline-block;
   font-family: var(--f-body);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   padding-bottom: 0.5rem;
   position: relative;
   margin-bottom: var(--sp-3);
@@ -165,9 +207,14 @@ blockquote {
   left: 50%; bottom: 0;
   transform: translateX(-50%);
   width: 28px; height: 1px;
-  background: var(--gold);
+  background: var(--gold-dark);
 }
 .eyebrow--left::after { left: 0; transform: none; }
+/* On dark backgrounds the original gold reads well */
+.hero .eyebrow, .subhero .eyebrow,
+.section--plum .eyebrow, .site-footer .eyebrow { color: var(--gold-soft); }
+.hero .eyebrow::after, .subhero .eyebrow::after,
+.section--plum .eyebrow::after { background: var(--gold-soft); }
 
 .script {
   font-family: var(--f-script);
@@ -199,7 +246,7 @@ blockquote {
   justify-content: center;
   gap: var(--sp-3);
   margin: var(--sp-4) auto;
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 .divider-ornament::before,
 .divider-ornament::after {
@@ -207,8 +254,8 @@ blockquote {
   display: block;
   width: 60px;
   height: 1px;
-  background: var(--gold);
-  opacity: 0.6;
+  background: var(--gold-dark);
+  opacity: 0.7;
 }
 .divider-ornament svg { width: 18px; height: 18px; }
 
@@ -704,7 +751,7 @@ blockquote {
   padding: var(--sp-6);
   background: linear-gradient(135deg, var(--cream) 0%, var(--cream-2) 100%);
   border-radius: var(--r-lg);
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid var(--gold-dark);
   position: relative;
 }
 .testimonial::before {
@@ -715,8 +762,8 @@ blockquote {
   font-family: var(--f-display);
   font-size: 7rem;
   line-height: 1;
-  color: var(--gold);
-  opacity: 0.22;
+  color: var(--gold-dark);
+  opacity: 0.18;
   pointer-events: none;
 }
 .testimonial-quote {
@@ -732,7 +779,7 @@ blockquote {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--plum);
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -740,7 +787,7 @@ blockquote {
 .testimonial-author::before {
   content: "";
   width: 28px; height: 1px;
-  background: var(--gold);
+  background: var(--gold-dark);
   display: inline-block;
 }
 .testimonial-photo {
@@ -813,14 +860,15 @@ blockquote {
 .pkg-tier {
   font-family: var(--f-body);
   font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   text-align: center;
   margin-bottom: var(--sp-2);
 }
-.pkg--silver .pkg-tier { color: #6b7785; }
-.pkg--bronze .pkg-tier { color: #a05a2c; }
+.pkg--silver .pkg-tier { color: #565d68; }   /* AA on white */
+.pkg--bronze .pkg-tier { color: #8a4e26; }   /* AA on white */
 .pkg-title {
   font-family: var(--f-display);
   font-size: var(--fs-xl);
@@ -851,7 +899,7 @@ blockquote {
   position: absolute;
   left: 0;
   top: 0.55rem;
-  color: var(--gold);
+  color: var(--gold-dark);
   font-weight: 700;
 }
 .pkg .btn { align-self: center; margin-top: auto; }
@@ -886,10 +934,10 @@ details.faq summary::-webkit-details-marker { display: none; }
 details.faq summary::after {
   content: "+";
   font-family: var(--f-body);
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.8rem;
   line-height: 1;
-  color: var(--gold);
+  color: var(--gold-dark);
   transition: transform .3s var(--ease);
 }
 details.faq[open] summary::after { content: "−"; }
@@ -925,9 +973,10 @@ details.faq[open] summary::after { content: "−"; }
 .pastor-role {
   font-family: var(--f-body);
   font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   margin-bottom: var(--sp-3);
 }
 .pastor-contact {
@@ -968,6 +1017,93 @@ details.faq[open] summary::after { content: "−"; }
   transition: transform .3s var(--ease), opacity .3s var(--ease);
 }
 .trust-strip img:hover { transform: translateY(-3px); opacity: 1; }
+
+/* ---------- Service area map (homepage) ---------- */
+.service-map {
+  max-width: 720px;
+  margin: 0 auto var(--sp-7);
+  padding: 0;
+  text-align: center;
+}
+.service-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 60px rgba(0,0,0,0.35));
+}
+.service-map .map-state {
+  fill: rgba(250, 246, 239, 0.08);
+  stroke: rgba(214, 184, 122, 0.55);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition: fill .35s var(--ease), stroke .35s var(--ease);
+}
+.service-map .map-labels text {
+  font-family: var(--f-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: rgba(214, 184, 122, 0.85);
+  text-anchor: middle;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.service-map .map-marker { cursor: pointer; outline: none; }
+.service-map .map-marker use {
+  fill: var(--gold-soft);
+  stroke: rgba(26, 15, 36, 0.35);
+  stroke-width: 0.6;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill .25s var(--ease), transform .35s var(--ease), filter .35s var(--ease);
+  filter: drop-shadow(0 4px 10px rgba(184, 149, 74, 0.45));
+}
+.service-map .map-marker:hover use,
+.service-map .map-marker:focus-visible use {
+  fill: #fff;
+  transform: scale(1.18);
+  filter: drop-shadow(0 6px 18px rgba(255, 255, 255, 0.55));
+}
+.service-map .map-markers:hover .map-marker:not(:hover):not(:focus-visible) use {
+  fill: rgba(214, 184, 122, 0.45);
+  filter: none;
+}
+/* Tooltip pill */
+.service-map .map-tip {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s var(--ease);
+}
+.service-map .map-tip rect {
+  fill: var(--cream);
+  stroke: var(--gold-soft);
+  stroke-width: 0.6;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+}
+.service-map .map-tip text {
+  font-family: var(--f-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: var(--ink);
+  text-anchor: middle;
+}
+.service-map .map-marker:hover .map-tip,
+.service-map .map-marker:focus-visible .map-tip {
+  opacity: 1;
+}
+.service-map-caption {
+  margin: var(--sp-4) auto 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 239, 0.55);
+}
+@media (max-width: 540px) {
+  .service-map { max-width: 100%; }
+  .service-map .map-labels text { font-size: 14px; }
+}
 
 /* ---------- Locations strip ---------- */
 .locations {
@@ -1124,22 +1260,24 @@ details.faq[open] summary::after { content: "−"; }
 @media (min-width: 820px) {
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; }
 }
-.site-footer h5 {
+.site-footer .footer-h {
   color: var(--cream);
   font-family: var(--f-body);
+  font-weight: 700;
   font-size: 0.78rem;
+  line-height: 1.2;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin: 0 0 var(--sp-4);
   position: relative;
   padding-bottom: 0.5rem;
 }
-.site-footer h5::after {
+.site-footer .footer-h::after {
   content: "";
   position: absolute;
   left: 0; bottom: 0;
   width: 28px; height: 1px;
-  background: var(--gold);
+  background: var(--gold-soft);
 }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin-bottom: 0.6rem; }
@@ -1197,7 +1335,7 @@ details.faq[open] summary::after { content: "−"; }
   color: rgba(250,246,239,0.55);
   letter-spacing: 0.04em;
 }
-.footer-bottom img { height: 56px; opacity: 0.85; }
+.footer-bottom img { height: 130px; opacity: 0.9; }
 
 /* ---------- Reveal-on-scroll (progressive enhancement — visible by default) ---------- */
 html.js [data-reveal] {

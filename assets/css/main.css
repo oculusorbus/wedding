@@ -336,6 +336,20 @@ blockquote {
   padding: 0;
 }
 .nav-links > li { position: relative; margin: 0; }
+/* Invisible bridge that fills the gap between trigger and dropdown so
+   moving the cursor toward the menu items doesn't lose :hover. */
+.nav-links > li.has-submenu::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -8px;
+  right: -8px;
+  height: 16px;
+  z-index: 9;
+  pointer-events: none;
+}
+.nav-links > li.has-submenu:hover::after,
+.nav-links > li.has-submenu.is-open::after { pointer-events: auto; }
 .nav-links > li > a,
 .nav-links > li > button.nav-toggle {
   display: inline-flex;
@@ -375,26 +389,31 @@ blockquote {
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: var(--r);
   padding: var(--sp-3);
+  margin-top: 14px; /* visual offset; the ::after bridge above covers it for hover */
   min-width: 230px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .25s var(--ease), transform .25s var(--ease);
+  visibility: hidden;
+  transition: opacity .22s var(--ease), transform .22s var(--ease), visibility 0s linear .22s;
   box-shadow: var(--shadow);
   list-style: none;
   z-index: 10;
 }
-.nav-links > li.is-open .dropdown,
-.nav-links > li:hover .dropdown {
+.nav-links > li.has-submenu:hover .dropdown,
+.nav-links > li.has-submenu.is-open .dropdown,
+.nav-links > li.has-submenu:focus-within .dropdown {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
   transform: translateX(-50%) translateY(0);
+  transition: opacity .22s var(--ease), transform .22s var(--ease), visibility 0s linear 0s;
 }
 .dropdown li { margin: 0; }
 .dropdown a {

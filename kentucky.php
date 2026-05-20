@@ -50,7 +50,7 @@ $page_schema      = [
           <span class="pastor-role">Officiant · Danville, Kentucky</span>
           <h2 class="pastor-name">Officiant Dr. Truemon Barger</h2>
 
-          <p>Dr. Truemon Barger is our Danville, KY officiant serving the great people of central Kentucky. Dr. Truemon is a chiropractor in Harrodsburg, KY where he eases the pain of his patients on the weekdays. On the weekends, he brings people together in matrimony to celebrate a happy union. His hobbies include family time with his girlfriend Brooke and their furbabies. Other hobbies are learning new techniques to better serve his patients and community, watching the latest movie, or reading. He is a part of the Harrodsburg Rotary club and the Emerging Leaders of United Way Harrodsburg.</p>
+          <p>Dr. Truemon Barger is our Danville, KY officiant serving the great people of central Kentucky. Dr. Truemon is a chiropractor in Harrodsburg, KY where he eases the pain of his patients on the weekdays. On the weekends, he brings people together in matrimony to celebrate a happy union. His hobbies include family time with his family, learning new techniques to better serve his patients and community, watching the latest movie, exploring nature, and reading. He is a part of the Harrodsburg Rotary club and the Emerging Leaders of United Way Harrodsburg.</p>
 
           <p>Call Dr. Truemon directly at <a href="tel:3162104760">316-210-4760</a> to secure your date.</p>
 

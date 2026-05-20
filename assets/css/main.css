@@ -1126,9 +1126,9 @@ details.faq[open] summary::after { content: "−"; }
   transform: translate(-50%, -12px);
 }
 /* Positions tuned to the painted hearts in service-area-map.png */
-.service-pin--kc { left: 46.5%; top: 22%;   }
-.service-pin--ky { left: 75%;   top: 25.5%; }
-.service-pin--tx { left: 35%;   top: 63%; width: 22%; }
+.service-pin--kc { left: 48.2%; top: 23.2%; }
+.service-pin--ky { left: 82.9%; top: 28.3%; }
+.service-pin--tx { left: 32.1%; top: 68.7%; width: 18%; }
 
 .service-map-caption {
   margin: var(--sp-4) auto 0;

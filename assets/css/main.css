@@ -1032,7 +1032,6 @@ details.faq[open] summary::after { content: "−"; }
   text-align: center;
 }
 .service-map-frame {
-  position: relative;
   display: inline-block;
   width: 100%;
   max-width: 540px;
@@ -1041,9 +1040,14 @@ details.faq[open] summary::after { content: "−"; }
   padding: var(--sp-5) var(--sp-4);
   box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(214, 184, 122, 0.35);
 }
-.service-map-frame > picture,
-.service-map-frame > picture img,
-.service-map-frame > img {
+.service-map-inner {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+.service-map-inner > picture,
+.service-map-inner > picture img,
+.service-map-inner > img {
   display: block;
   width: 100%;
   height: auto;

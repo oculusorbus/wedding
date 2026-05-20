@@ -681,6 +681,46 @@ blockquote {
 .hero-meta span { white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; }
 .hero-meta .dot { width: 4px; height: 4px; background: var(--gold-soft); border-radius: 50%; }
 
+/* On narrow viewports the location strip wraps to multiple lines; absolute
+   positioning then makes it overlap the hero buttons. Drop it into normal
+   flow under the buttons and tighten the gaps. */
+@media (max-width: 720px) {
+  .hero {
+    min-height: clamp(560px, 100svh, 820px);
+    padding-bottom: var(--sp-5);
+  }
+  .hero-inner { padding-bottom: var(--sp-6); }
+  .hero-actions { width: 100%; gap: var(--sp-3); }
+  .hero-actions .btn { width: 100%; max-width: 320px; }
+  .hero-meta {
+    /* Switch from flex (which was overflowing) to inline text flow so
+       the city names wrap naturally and stay centered. */
+    position: static;
+    display: block;
+    transform: none;
+    margin-top: var(--sp-6);
+    padding: 0 var(--sp-3);
+    text-align: center;
+    font-size: 0.66rem;
+    letter-spacing: 0.10em;
+    line-height: 1.7;
+  }
+  .hero-meta span {
+    display: inline;
+    margin: 0 0.4em;
+  }
+  .hero-meta .dot {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.1em 0.15em;
+  }
+}
+@media (max-width: 420px) {
+  .hero-meta { font-size: 0.62rem; }
+  /* Hide the tiny dots at the narrowest widths so the cities have more room */
+  .hero-meta .dot { display: none; }
+}
+
 /* Sub hero (interior pages) */
 .subhero {
   position: relative;

@@ -310,7 +310,7 @@ blockquote {
   text-decoration: none;
   transition: color .25s var(--ease);
 }
-.brand img { width: 40px; height: 40px; object-fit: contain; }
+.brand img { width: auto; height: 38px; object-fit: contain; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; }
 .brand-text span:first-child {
   font-family: var(--f-script);
@@ -1128,23 +1128,14 @@ details.faq[open] summary::after { content: "−"; }
 .site-footer li { margin-bottom: 0.6rem; }
 .site-footer a { color: rgba(250,246,239,0.85); transition: color .2s var(--ease), padding-left .2s var(--ease); }
 .site-footer a:hover { color: var(--gold-soft); padding-left: 4px; }
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin-bottom: var(--sp-3);
+.footer-bride {
+  width: auto;
+  height: 280px;
+  margin: 0 0 var(--sp-5);
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.4));
 }
-.footer-brand img { width: 48px; height: 48px; }
-.footer-brand-text {
-  font-family: var(--f-display);
-  font-size: 1.4rem;
-  color: var(--cream);
-}
-.footer-brand-text .script {
-  display: block;
-  font-size: 1.2rem;
-  color: var(--gold-soft);
-  line-height: 1;
+@media (max-width: 820px) {
+  .footer-bride { height: 230px; margin-bottom: var(--sp-4); }
 }
 .footer-tagline {
   font-size: 0.94rem;

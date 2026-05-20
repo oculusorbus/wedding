@@ -2,13 +2,10 @@
   <div class="container">
     <div class="footer-grid">
       <div data-reveal>
-        <div class="footer-brand">
-          <img src="/images/ww-icon.png" alt="" width="48" height="48">
-          <div class="footer-brand-text">
-            <span class="script">It's a Wonderful Life</span>
-            Weddings
-          </div>
-        </div>
+        <picture>
+          <source type="image/webp" srcset="/images/bride-logo.webp">
+          <img class="footer-bride" src="/images/bride-logo.png" alt="It's a Wonderful Life Weddings" width="277" height="567" loading="lazy" decoding="async">
+        </picture>
         <p class="footer-tagline">Creating innovative ceremonies in San Antonio &middot; Hill Country &middot; Austin &middot; Kansas City &middot; Central Kentucky.</p>
         <p class="footer-tagline" style="margin-top: var(--sp-3); font-size: 0.85rem;">
           <strong style="color: var(--gold-soft); font-weight: 600;">The Knot Best of Weddings</strong> &mdash; Hall of Fame inductees. Members in good standing of the International Association of Professional Wedding Officiants.

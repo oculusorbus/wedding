@@ -1138,14 +1138,20 @@ details.faq[open] summary::after { content: "−"; }
 @media (max-width: 820px) {
   .footer-bride { height: 230px; margin-bottom: var(--sp-4); }
 }
-.footer-tagline {
-  font-size: 0.94rem;
-  line-height: 1.55;
-  color: rgba(250,246,239,0.72);
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
+.footer-blurb {
+  max-width: 820px;
+  margin: var(--sp-7) auto 0;
+  padding: 0 var(--sp-4);
+  text-align: center;
+  color: rgba(250,246,239,0.78);
 }
+.footer-blurb p {
+  margin: 0 0 var(--sp-3);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+.footer-blurb p:last-child { font-size: 0.85rem; margin-bottom: 0; }
+.footer-blurb strong { color: var(--gold-soft); font-weight: 600; }
 .phone-block {
   display: flex; flex-direction: column; gap: 0.85rem;
 }

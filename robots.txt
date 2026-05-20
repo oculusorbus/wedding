@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /partials/
+Disallow: /aos/
+
+Sitemap: https://www.itsawonderfullifeweddings.com/sitemap.xml

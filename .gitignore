@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Local tooling state
+.claude/
+
+# Logs (server-side)
+logs/
+
+# Photoshop sources
+*.psd

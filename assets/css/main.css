@@ -827,7 +827,10 @@ blockquote {
   aspect-ratio: 4/5;
   width: 100%;
   object-fit: cover;
+  object-position: center center;
 }
+/* Per-image crop anchors for feature-row photos */
+.feature-row img[src*="military-couple"] { object-position: 0% center; }
 .feature-row .feature-text h2 { margin-top: var(--sp-2); }
 
 /* ---------- Package cards (Gold/Silver/Bronze) ---------- */

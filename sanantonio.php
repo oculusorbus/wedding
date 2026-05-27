@@ -90,6 +90,39 @@ $page_schema      = [
             <a href="tel:2108787030"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg> 210-878-7439</a>
             <a href="mailto:mmaldo71@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/></svg> Email Manuel</a>
           </div>
+
+          <details class="faq" style="margin-top: var(--sp-5);" lang="es">
+            <summary lang="es">Biografía En Español</summary>
+            <div class="faq-body" lang="es">
+              <p><i>San Antonio, Texas — Sirviendo a parejas en todo el Sur de Texas</i></p>
+
+              <p>El Pastor Manuel Maldonado ha vivido en San Antonio desde 1989, dedicando <strong>más de 30 años al servicio fiel del Señor</strong> a través del liderazgo pastoral, mentoría y ministerio generacional. Nacido en una familia pastoral puertorriqueña de segunda generación en Rochester, Nueva York, Manuel creció con un corazón enfocado en el servicio comunitario, el cuidado espiritual y el amor hacia las personas.</p>
+
+              <p>Es un <strong>creyente nacido de nuevo en Jesucristo</strong>, cuya vida refleja un compromiso genuino con el ministerio matrimonial y la restauración familiar. Junto a su esposa, con quien ha compartido más de 34 años de matrimonio, ha dirigido programas enfocados en matrimonios, guiando parejas con principios bíblicos y celebrando uniones significativas que honran el pacto de Dios.</p>
+
+              <p>La experiencia del Pastor Manuel como oficiante incluye <strong>ceremonias en inglés, español y bilingües</strong>, creando un ambiente cálido e inclusivo que honra la historia, herencia y caminar espiritual de cada pareja. Su mayor alegría es presenciar el momento en que dos vidas se unen como una sola bajo la bendición de Dios.</p>
+
+              <h3>Trayectoria Ministerial</h3>
+              <ul>
+                <li>Ordenado por <strong>Summit Christian Center</strong> por más de 19 años</li>
+                <li>Actualmente sirve en <strong>Community Bible Church (CBC)</strong></li>
+                <li>Líder en <strong>Grace Alliance Mental Health Support</strong></li>
+                <li>Colaborador con <strong>NAMI</strong> (National Alliance on Mental Illness)</li>
+                <li>Mentor y facilitador de grupos de apoyo para hombres y matrimonios maduros</li>
+                <li>Padre de tres hijos adultos; casado desde <strong>agosto de 1991</strong></li>
+                <li>Guiado por el principio de que <i>“el hierro con hierro se afila,”</i> fomentando amistades a través de responsabilidad mutua y crecimiento espiritual</li>
+              </ul>
+
+              <h3>Ministerio de Bodas</h3>
+              <ul>
+                <li>Oficia ceremonias personalizadas según la historia y valores espirituales de cada pareja</li>
+                <li>Ofrece servicios bilingües en <strong>inglés y español</strong> para honrar las tradiciones familiares</li>
+                <li>Brinda <strong>orientación prematrimonial</strong> opcional basada en principios bíblicos y relacionales</li>
+                <li>Dirige cada ceremonia con amabilidad, gozo y ánimo guiado por la fe</li>
+                <li>Ayuda a las parejas a crear momentos significativos, guiados por el Espíritu Santo, llenos de amor y propósito</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </article>
 

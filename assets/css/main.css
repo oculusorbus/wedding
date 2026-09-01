@@ -1291,6 +1291,7 @@ details.faq[open] summary::after { content: "−"; }
   font-weight: 600;
 }
 .field input,
+.field select,
 .field textarea {
   width: 100%;
   padding: 0.95rem 1.1rem;
@@ -1304,11 +1305,44 @@ details.faq[open] summary::after { content: "−"; }
   outline: none;
 }
 .field input:focus,
+.field select:focus,
 .field textarea:focus {
   border-color: var(--plum);
   background: #fff;
 }
 .field textarea { resize: vertical; min-height: 140px; }
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.6rem;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236b5b73' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.1rem center;
+  cursor: pointer;
+}
+
+/* Grouped sections within a long form (contact page) */
+.form-section {
+  border: 0;
+  border-top: 1px solid var(--line);
+  padding: var(--sp-5) 0 0;
+  margin: 0 0 var(--sp-5);
+  min-width: 0;
+}
+.form-section:first-of-type { border-top: 0; padding-top: 0; }
+.form-section > legend {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  color: var(--plum);
+  padding: 0;
+  margin-bottom: var(--sp-4);
+}
+.form-section .field:last-child { margin-bottom: 0; }
+/* Grid gap already spaces these; drop the extra margin so stacked and
+   side-by-side rows breathe the same amount. */
+.form-section .grid { gap: var(--sp-4); margin-bottom: var(--sp-4); }
+.form-section .grid .field { margin-bottom: 0; }
+.form-section .grid:last-child { margin-bottom: 0; }
 
 /* ---------- Photo album / video grid ---------- */
 .videos {

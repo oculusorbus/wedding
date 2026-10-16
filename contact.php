@@ -10,6 +10,7 @@ $officiants = [
   'Pastor David Barger',
   'Pastor Manuel Maldonado',
   'Pastor Jose Cruz',
+  'Pastor Ashlae Ortiz',
   'Renee Hanson Malone',
   'Elaine Hanson',
   'Dr. Truemon Barger',

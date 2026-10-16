@@ -189,6 +189,36 @@ $page_schema      = [
         </div>
       </article>
 
+      <!-- Pastor Ashlae Ortiz -->
+      <article class="pastor scroll-mt" id="ashlaeortiz" data-reveal>
+        <div class="pastor-photo">
+          <?php img('images/ashlae-ortiz.jpg', 'Pastor Ashlae Ortiz'); ?>
+        </div>
+        <div>
+          <span class="pastor-role">Wedding Officiant · Personal, Story-Driven Ceremonies</span>
+          <h2 class="pastor-name">Pastor Ashlae Ortiz</h2>
+          <p><i>San Antonio, Texas</i></p>
+
+          <p>Pastor Ashlae Ortiz is an ordained minister and wedding officiant based in San Antonio, Texas, with <strong>more than seven years of experience</strong> in pastoral ministry, leadership, discipleship, and working closely with people from all walks of life.</p>
+
+          <p>He has a unique ability to bring individuality and personality to some of life’s greatest moments. He believes a wedding ceremony should feel more like a meaningful reflection of the couple, their story, and the commitment they are making to one another than just another formal event.</p>
+
+          <p>Known for his relational approach, Ashlae takes time to get to know each couple personally. His goal is to create a ceremony that feels <strong>natural, heartfelt, and authentic</strong> rather than generic or simply scripted. Whether the celebration is intimate or includes hundreds of guests, he knows how to create a sense of connection and make the couple feel as though they are still having a personal moment together in the middle of a large celebration.</p>
+
+          <p>His years of ministry have also taken him beyond the local church and throughout the United States and internationally, serving in places including <strong>Mexico, Kenya, Honduras, Cambodia</strong>, and other communities around the world. These experiences have shaped his appreciation for people, culture, family, and the stories that bring us together.</p>
+
+          <p>For Ashlae, officiating a wedding is more than standing at the front of the room. It is the privilege of helping two people tell their story, honor the people who helped shape them, and begin their marriage surrounded by the people they love.</p>
+
+          <blockquote>
+            His goal is simple: to make a big moment feel personal.
+          </blockquote>
+
+          <div class="pastor-contact">
+            <a href="/contact.php?minister=Pastor+Ashlae+Ortiz#contact-form"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/></svg> Request Pastor Ashlae</a>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 

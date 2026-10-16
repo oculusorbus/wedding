@@ -44,6 +44,7 @@
             <li><a href="/austin.php#reneehansonmalone">Renee Hanson Malone</a></li>
             <li><a href="/sanantonio.php#manuelmaldonado">Pastor Manuel Maldonado</a></li>
             <li><a href="/sanantonio.php#josecruz">Pastor Jose Cruz</a></li>
+            <li><a href="/sanantonio.php#ashlaeortiz">Pastor Ashlae Ortiz</a></li>
           </ul>
         </li>
         <li class="has-submenu">
@@ -105,6 +106,7 @@
         <li><a href="/austin.php#reneehansonmalone">Renee Hanson Malone</a></li>
         <li><a href="/sanantonio.php#manuelmaldonado">Pastor Manuel Maldonado</a></li>
         <li><a href="/sanantonio.php#josecruz">Pastor Jose Cruz</a></li>
+        <li><a href="/sanantonio.php#ashlaeortiz">Pastor Ashlae Ortiz</a></li>
       </ul>
     </li>
     <li class="mobile-nav-group">
